@@ -517,7 +517,7 @@ body.preloader-site { overflow: hidden; }
   .carousel-track > .tile.is-parent {
     flex: 1 1 0;
     min-width: 220px;
-    max-width: 340px;
+    max-width: 450px;
     width: 28vw;
     margin-right: 0;
     scroll-snap-align: none;
