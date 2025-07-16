@@ -23,15 +23,26 @@ html {
   overscroll-behavior: none;
 }
 
-body {
-  scrollbar-gutter: stable both-edges;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: url('../image/background2.jpg');
-  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
+  z-index: -1;
 }
+
+
 
 body::-webkit-scrollbar {
   width: 8px;
@@ -81,7 +92,7 @@ body:not(:hover)::-webkit-scrollbar-thumb {
     height: 100vh;
     position: relative;
     background-image: url('../image/background1.jpg');
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -722,32 +733,6 @@ body.preloader-site { overflow: hidden; }
     color: #4a4a4a;
   }
 
-
-.checkbox-wrapper {
-  position: relative;
-  max-width: 599px;
-}
-
-.checkbox-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  align-items: flex-start;
-}
-
-.checkbox-item {
-  display: flex;
-  align-items: center;
-  /* Убрано max-width: 300px - это было причиной переноса текста */
-  white-space: nowrap; /* Запрещаем перенос текста */
-}
-
-.checkbox-item input[type="checkbox"] {
-  margin: 0; /* Убираем все отступы у чекбокса */
-  margin-right: 8px; /* Добавляем только правый отступ */
-}
-
   #rsvp-form .field {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -843,9 +828,9 @@ body.preloader-site { overflow: hidden; }
 
 @media (max-width: 720px) {
   .transition1 {
-    height: 400px; 
+    height: 500px; 
     background-image: url('../image/maksim_anna_sg.jpeg');
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-size: cover;
     mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
@@ -870,4 +855,48 @@ body.preloader-site { overflow: hidden; }
   .transition2 {
     height: 400px; 
   }
+}
+
+
+/* Полный сброс для секции */
+#rsvp .checkbox-wrapper {
+  all: unset;
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  position: relative;
+}
+
+/* Жесткий сброс для списка */
+#rsvp .checkbox-list {
+  all: unset;
+  display: block;
+  width: 100%;
+}
+
+/* Абсолютный контроль над элементами */
+#rsvp .checkbox-item {
+  all: unset;
+  display: flex !important;
+  align-items: center !important;
+  width: 100%;
+  margin: 0.25rem 0;
+  position: relative;
+  left: 0 !important;
+}
+
+#rsvp .checkbox-item input[type="checkbox"] {
+  all: unset;
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+#rsvp .checkbox-item label {
+  all: unset;
+  display: inline !important;
+  white-space: nowrap;
 }
