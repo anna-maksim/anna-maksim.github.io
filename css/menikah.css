@@ -393,7 +393,7 @@ body.preloader-site { overflow: hidden; }
 .preloader-wrapper {
   height: 100%;
   width: 100%;
-  background: #D8A9A8;
+  background: #8e8e8e;
   position: fixed;
   top: 0;
   left: 0;
@@ -422,11 +422,6 @@ body.preloader-site { overflow: hidden; }
 
 .fa-copy { margin-right: 5px; }
 .white { color: ghostwhite; }
-.dusty-pink { color: #D8A9A8; }
-.dusty-pink-lighter { color: var(--extra-light-col); }
-.dusty-pink-lightest { color: var(--light-col); }
-.dusty-pink-darker { color: var(--dark-col); }
-.dusty-pink-darkest { color: var(--sec-font-col); }
 
 .tile { border-radius: 20px; }
 
